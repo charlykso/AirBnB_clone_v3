@@ -177,7 +177,7 @@
         "documentation": {}
     },
     {
-        "label": "getenv",
+        "label": "environ",
         "importPath": "os",
         "description": "os",
         "isExtraImport": true,
@@ -1380,11 +1380,11 @@
         "documentation": {}
     },
     {
-        "label": "index",
+        "label": "status",
         "kind": 2,
         "importPath": "api.v1.views.index",
         "description": "api.v1.views.index",
-        "peekOfCode": "def index():\n    return jsonify({\"status\": \"OK\"})",
+        "peekOfCode": "def status():\n    \"\"\"API status\"\"\"\n    return jsonify({\"status\": \"OK\"})",
         "detail": "api.v1.views.index",
         "documentation": {}
     },
@@ -1393,7 +1393,7 @@
         "kind": 2,
         "importPath": "api.v1.app",
         "description": "api.v1.app",
-        "peekOfCode": "def close_dataBase():\n    \"\"\"a method that calls storage.close\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    host=getenv('HBNB_API_HOST')\n    port=getenv('HBNB_API_PORT')\n    if not host:\n        host = '0.0.0.0'\n    if not port:\n        port = '5000'",
+        "peekOfCode": "def close_dataBase(e):\n    \"\"\"tear down app context\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    host=environ.get('HBNB_API_HOST')\n    port=environ.get('HBNB_API_PORT')\n    if not host:\n        host = '0.0.0.0'\n    if not port:\n        port = '5000'",
         "detail": "api.v1.app",
         "documentation": {}
     },
@@ -1402,7 +1402,7 @@
         "kind": 5,
         "importPath": "api.v1.app",
         "description": "api.v1.app",
-        "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(app_views)\n@app.teardown_appcontext\ndef close_dataBase():\n    \"\"\"a method that calls storage.close\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    host=getenv('HBNB_API_HOST')\n    port=getenv('HBNB_API_PORT')\n    if not host:",
+        "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(app_views)\n@app.teardown_appcontext\ndef close_dataBase(e):\n    \"\"\"tear down app context\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    host=environ.get('HBNB_API_HOST')\n    port=environ.get('HBNB_API_PORT')\n    if not host:",
         "detail": "api.v1.app",
         "documentation": {}
     },
