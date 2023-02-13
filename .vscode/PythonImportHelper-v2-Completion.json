@@ -72,14 +72,6 @@
         "documentation": {}
     },
     {
-        "label": "app_views",
-        "importPath": "api.v1.views",
-        "description": "api.v1.views",
-        "isExtraImport": true,
-        "detail": "api.v1.views",
-        "documentation": {}
-    },
-    {
         "label": "Flask",
         "importPath": "flask",
         "description": "flask",
@@ -305,14 +297,6 @@
     },
     {
         "label": "request",
-        "importPath": "flask",
-        "description": "flask",
-        "isExtraImport": true,
-        "detail": "flask",
-        "documentation": {}
-    },
-    {
-        "label": "Flask",
         "importPath": "flask",
         "description": "flask",
         "isExtraImport": true,
@@ -485,14 +469,6 @@
         "isExtraImport": true,
         "importPath": "models",
         "description": "models",
-        "detail": "models",
-        "documentation": {}
-    },
-    {
-        "label": "storage",
-        "importPath": "models",
-        "description": "models",
-        "isExtraImport": true,
         "detail": "models",
         "documentation": {}
     },
@@ -2282,7 +2258,7 @@
         "kind": 2,
         "importPath": "api.v1.app",
         "description": "api.v1.app",
-        "peekOfCode": "def close_dataBase(e):\n<<<<<<< HEAD\n    \"\"\"tear down app context\"\"\"\n    storage.close()\nif __name__ == '__main__':\n    host=environ.get('HBNB_API_HOST')\n    port=environ.get('HBNB_API_PORT')\n=======\n    \"\"\"\n    tear down app context",
+        "peekOfCode": "def close_dataBase(e):\n    \"\"\"\n    tear down app context\n    \"\"\"\n    storage.close()\n@app.errorhandler(404)\ndef not_found(e):\n    \"\"\"\n    404 route\n    \"\"\"",
         "detail": "api.v1.app",
         "documentation": {}
     },
@@ -2291,7 +2267,7 @@
         "kind": 2,
         "importPath": "api.v1.app",
         "description": "api.v1.app",
-        "peekOfCode": "def not_found(e):\n    \"\"\"\n    404 route\n    \"\"\"\n    return make_response(jsonify({\"error\": \"Not found\"}), 404)\nif __name__ == '__main__':\n    host = environ.get('HBNB_API_HOST')\n    port = environ.get('HBNB_API_PORT')\n>>>>>>> storage_get_count\n    if not host:",
+        "peekOfCode": "def not_found(e):\n    \"\"\"\n    404 route\n    \"\"\"\n    return make_response(jsonify({\"error\": \"Not found\"}), 404)\nif __name__ == '__main__':\n    host = environ.get('HBNB_API_HOST')\n    port = environ.get('HBNB_API_PORT')\n    if not host:\n        host = '0.0.0.0'",
         "detail": "api.v1.app",
         "documentation": {}
     },
@@ -2300,7 +2276,7 @@
         "kind": 5,
         "importPath": "api.v1.app",
         "description": "api.v1.app",
-        "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(app_views)\n<<<<<<< HEAD\n=======\nCORS(app, resources={r\"/*\": {\"origins\": \"0.0.0.0\"}})\n>>>>>>> storage_get_count\n@app.teardown_appcontext\ndef close_dataBase(e):\n<<<<<<< HEAD\n    \"\"\"tear down app context\"\"\"",
+        "peekOfCode": "app = Flask(__name__)\napp.register_blueprint(app_views)\nCORS(app, resources={r\"/api/v1/*\": {\"origins\": \"0.0.0.0\"}})\n@app.teardown_appcontext\ndef close_dataBase(e):\n    \"\"\"\n    tear down app context\n    \"\"\"\n    storage.close()\n@app.errorhandler(404)",
         "detail": "api.v1.app",
         "documentation": {}
     },
