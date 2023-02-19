@@ -49,7 +49,7 @@ def delete_review(review_id=None):
     return jsonify({}), 200
 
 
-@app_views.route("/places/<place_id/reviews", methods=['POST'],
+@app_views.route("/places/<place_id>/reviews", methods=['POST'],
                  strict_slashes=False)
 def create_review(place_id=None):
     """

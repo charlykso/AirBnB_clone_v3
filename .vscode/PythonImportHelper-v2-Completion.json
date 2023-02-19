@@ -1767,10 +1767,10 @@
     },
     {
         "label": "md5",
-        "importPath": "hashid",
-        "description": "hashid",
+        "importPath": "hashlib",
+        "description": "hashlib",
         "isExtraImport": true,
-        "detail": "hashid",
+        "detail": "hashlib",
         "documentation": {}
     },
     {
